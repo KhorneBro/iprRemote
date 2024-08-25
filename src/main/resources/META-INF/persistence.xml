@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="ipr">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/postgresDSJ</jta-data-source>
+
+        <class>ru.veselkov.iprremote.model.RemoteModel</class>
+
+        <properties>
+<!--            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+<!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>-->
+<!--            <property name="jakarta.persistence.schema-generation.drop-source" value="metadata"/>-->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
