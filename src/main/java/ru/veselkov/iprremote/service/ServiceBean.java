@@ -17,6 +17,10 @@ public class ServiceBean implements RemoteServiceIpr {
     private StateFullBean stateFullBean;
     @EJB
     private SingletonBean singletonBean;
+    @EJB
+    EjbTesterOne ejbTesterOne;
+    @EJB
+    EjbTesterTwo ejbTesterTwo;
 
     @Override
     public void callRemote() {
@@ -35,6 +39,8 @@ public class ServiceBean implements RemoteServiceIpr {
     @Override
     public void callRemote(RemoteModel model) {
 
+        ejbTesterOne.test();
+        ejbTesterTwo.test();
     }
 
     @Override
@@ -44,9 +50,15 @@ public class ServiceBean implements RemoteServiceIpr {
             remoteModel = new RemoteModel();
         }
         remoteModel.setRemoteValue(1);
+
         statelessBean.increment(remoteModel);
+        statelessBean.env();
+
         stateFullBean.increment(remoteModel);
+        stateFullBean.env();
+
         singletonBean.increment(remoteModel);
+        singletonBean.env();
 
         daoManager.persistT(remoteModel);
     }
