@@ -18,9 +18,9 @@ public class ServiceBean implements RemoteServiceIpr {
     @EJB
     private SingletonBean singletonBean;
     @EJB
-    EjbTesterOne ejbTesterOne;
+    private EjbTesterOne ejbTesterOne;
     @EJB
-    EjbTesterTwo ejbTesterTwo;
+    private EjbTesterTwo ejbTesterTwo;
 
     @Override
     public void callRemote() {

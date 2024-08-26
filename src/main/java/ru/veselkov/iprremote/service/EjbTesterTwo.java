@@ -18,14 +18,14 @@ public class EjbTesterTwo {
 
         statelessBean.env();
         statelessBean.increment();
-        statelessBean.env();
+        statelessBean.env2();
 
         stateFullBean.env();
         stateFullBean.increment();
-        stateFullBean.env();
+        stateFullBean.env2();
 
         singletonBean.env();
         singletonBean.increment();
-        singletonBean.env();
+        singletonBean.env2();
     }
 }

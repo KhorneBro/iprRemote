@@ -15,6 +15,7 @@ public class EjbTesterOne {
 
     public void test() {
         System.out.println(this.getClass().getSimpleName());
+
         statelessBean.env();
         statelessBean.increment();
         statelessBean.env2();
