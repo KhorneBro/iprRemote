@@ -21,13 +21,13 @@ public class EjbTesterTwo {
     public void test() {
         System.out.println(this.getClass().getSimpleName() + " i = " + i);
 
-        statelessBean.setStatelessInt(i++);
+        statelessBean.setStatelessInt(i);
         System.out.println("statelessBean.getStatelessInt() = " + statelessBean.getStatelessInt());
 
-        stateFullBean.setStatefull(i++);
+        stateFullBean.setStatefull(i);
         System.out.println("stateFullBean.getStatefull() = " + stateFullBean.getStatefull());
 
-        singletonBean.setSingleton(i++);
+        singletonBean.setSingleton(i);
         System.out.println("singletonBean.getSingleton() = " + singletonBean.getSingleton());
 
     }
